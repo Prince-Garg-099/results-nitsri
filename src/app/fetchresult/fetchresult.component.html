@@ -1,0 +1,206 @@
+
+ <style>
+  table,tr,td{
+    border: 1px solid black;
+    text-align: center;
+  }
+ 
+
+  
+
+</style>
+<div >
+
+<nav class="navbar navbar-expand-lg navbar-light m-auto "   >
+    <h1 class="navbar-brand m-auto " style="background-color: aqua;"><img  style="height: 40px;width: 60px " src="../assets/logo.png" alt="">  National Institute of Technology, Srinagar </h1>
+  </nav>
+
+<div class="card bg-light mt-5 mb-5 m-auto  " style="border-radius: 10px; bottom: 25px;" >
+    <div class="card-header " style="color: rgb(255, 9, 9); background-color: rgb(94 238 226 / 23%);"  >
+      <h5>:: Online Results ::</h5> 
+    </div>
+    
+    <div class="card-body"  >
+      <form [formGroup]="loginForm">
+        <div class="form-group">
+          <label  >Enrollment Number :</label>
+          <input formControlName="uenroll" type="text" class="form-control" id=""  placeholder="Type here ">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Date of birth :</label>
+         
+          <input formControlName="udob" type="date" class="form-control" id="exampleInputPassword1" >
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Semester</label>
+          </div>
+          <select formControlName="semester" class="custom-select" id="inputGroupSelect01">
+            <option value="">Choose</option>
+            <option value="First">First</option>
+            <option value="Second">Second</option>
+            <option value="Third">Third</option>
+            <option value="Fourth">Fourth</option>
+            <option value="Fifth">Fifth</option>
+            <option value="Sixth">Sixth</option>
+            <option value="Seventh">Seventh</option>
+            <option value="Eighth">Eighth</option>
+          </select>
+        </div>
+       
+        <button type="submit" (click)="userlogin()"class="btn btn-info ml-5">Fetch Result </button>
+      </form>
+    </div>
+    <small>Designed and Developed By: <a href="https://www.linkedin.com/in/prince-garg-58a780203"  >Prince_Garg(2020BMME099)</a> </small>
+  </div> 
+
+ 
+  
+  
+ <div *ngIf="ShowMe" class="container mt-5">
+
+<table  class="table col-6 m-auto   ">
+<tr >
+  <th style="text-align: center; background-color: tomato;" >SEMESTER GRADE REPORT  </th>
+</tr>
+
+</table>
+<table class="table table-data col-6 m-auto ">
+  <tr >
+    <td > <strong>NAME OF STUDENT</strong> </td>
+      <td ><strong>ENROLL NO.</strong></td>
+      <td ><strong>SEMESTER</strong></td>
+      <td ><strong>DEGREE</strong></td>
+      <td ><strong>BRANCH</strong></td>
+    </tr>
+  <tbody>
+    <tr *ngFor = 'let us of findData'>
+      <td>{{us.name}}</td>
+      <td>{{us.enrollment}}</td>
+      <td>{{us.semester}}</td>
+      <td>B.TECH</td>
+      <td>{{us.branch}}</td>
+    </tr>
+  
+  </tbody>
+</table>
+<table class="table col-6 m-auto ">
+  <tr>
+    <td ><strong>COURSE CODE</strong> </td>
+    <td > <strong>COURSE NAME</strong> </td>
+    <td > <strong>GRADE</strong> </td>
+    <td ><strong> COURSE CREDITS</strong></td>
+  </tr>
+<tbody>
+  <tr *ngFor = 'let us of findData'>
+    <td>{{cc1}}</td>
+    <td>{{us.cn1}}</td>
+    <td>{{mg1}} </td>
+    <td>{{gd1}}</td>
+  </tr>
+  <tr *ngFor = 'let us of findData'>
+    <td>{{cc2}}</td>
+    <td>{{us.cn2}}</td>
+    <td>{{mg2}} </td>
+    <td>{{gd2}}</td>
+  </tr><tr *ngFor = 'let us of findData'>
+    <td>{{cc3}}</td>
+    <td>{{us.cn3}}</td>
+    <td>{{mg3}} </td>
+    <td>{{gd3}}</td>
+  </tr><tr *ngFor = 'let us of findData'>
+    <td>{{cc4}}</td>
+    <td>{{us.cn4}}</td>
+    <td>{{mg4}} </td>
+    <td>{{gd4}}</td>
+  </tr><tr *ngFor = 'let us of findData'>
+    <td>{{cc5}}</td>
+    <td>{{us.cn5}}</td>
+    <td>{{mg5}} </td>
+    <td>{{gd5}}</td>
+  </tr><tr *ngFor = 'let us of findData'>
+    <td>{{cc6}}</td>
+    <td>{{us.cn6}}</td>
+    <td>{{mg6}} </td>
+    <td>{{gd6}}</td>
+  </tr><tr *ngFor = 'let us of findData'>
+    <td>{{cc7}}</td>
+    <td>{{us.cn7}}</td>
+    <td>{{mg7}} </td>
+    <td>{{gd7}}</td>
+  </tr><tr *ngFor = 'let us of findData'>
+    <td>{{cc8}}</td>
+    <td>{{us.cn8}}</td>
+    <td>{{mg8}} </td>
+    <td>{{gd8}}</td>
+  </tr><tr *ngFor = 'let us of findData'>
+    <td>{{cc9}}</td>
+    <td>{{us.cn9}}</td>
+    <td>{{mg9}} </td>
+    <td>{{gd9}}</td>
+ 
+ 
+ 
+  
+  
+</tbody>
+</table>
+
+<table  class="table-data table col-6 m-auto  " >
+  <tbody><tr>
+      <td  class="style6" colspan="3"  style="text-align: center;" >
+          <b><strong >CURRENT SEMESTER
+        PERFORMANCE</strong></b>
+      </td>
+      <td  colspan="3" >
+          <strong >CUMULATIVE PERFORMANCE</strong>
+      </td>
+  </tr>
+  <tr>
+      <td  class="style5">
+          <strong>EARNED CREDITS</strong>
+      </td>
+      <td  class="style3">
+          <strong >EARNED GRADE POINTS</strong>
+      </td>
+      <td width="14%">
+          <strong >SGPA</strong>
+      </td>
+      <td class="style5">
+          <strong >EARNED CREDITS</strong>
+      </td>
+      <td  class="style3">
+          <strong >EARNED GRADE POINTS</strong>
+      </td>
+      <td  >
+          <strong >CGPA</strong>
+      </td>
+  </tr>
+  <tr>
+      <td  class="style5">
+          <span id="lblearn">25</span>
+      </td>
+      <td class="style3">
+          <span id="lblgd">{{tgp}}</span>
+      </td>
+      <td style="background-color: rgb(72, 231, 85);color: white; "  class="style4">
+          <span id="lblSgpa">{{sgpa}}</span>
+      </td>
+      <td >
+          <span id="lblearn1">25</span>
+      </td>
+      <td >
+          <span id="lblgd1">{{tgp}}</span>
+      </td>
+      <td style="background-color: rgb(231, 72, 72);color: white; " class="" >
+          <span id="lblSgpa1"><strong>{{sgpa}}</strong></span>
+      </td>
+  </tr>
+</tbody>
+
+</table>
+<div class=" col-6 m-auto">
+<button class=" btn-primary btn-sm "  (click)="print()"> <small>PrintResult</small>  </button>
+</div>
+</div>
+</div>
