@@ -1,19 +1,19 @@
-<style>
+
+ <style>
   table,tr,td{
     border: 1px solid black;
-    text-align: center;}
+    text-align: center;
+  }
 </style>
 
 
-<nav class="navbar bg-info    ">
-  <h5 class=" m-auto "> <img style="height: 40px; width:40px;" src="../../assets/logo.png" alt=""> National Institude of Technology, Srinagar</h5>
+<nav class="navbar  bg-info">
+  <span class=" mb-0 h6 m-auto "><img style="height: 30px; width: 30px;" src="../../assets/logo.png" alt=""> National Institude of Technology, Srinagar</span>
 </nav>
 
-
-
-<div class="card bg-light mt-5 mb-5 col-sm-4 m-auto   " style="border-radius: 10px; bottom: 25px;" >
+<div class="card bg-light mt-5 mb-5 col-sm-3 m-auto  " style="border-radius: 10px; bottom: 25px;" >
     <div class="card-header " style="color: rgb(255, 9, 9); background-color: rgb(94 238 226 / 23%);"  >
-      <h5>:: Online Results  ::</h5> 
+      <h5>:: Online Results ::</h5> 
     </div>
     
     <div class="card-body"  >
@@ -50,44 +50,35 @@
     <small>Designed and Developed By: <a href="https://www.linkedin.com/in/prince-garg-58a780203"  >Prince_Garg(2020BMME099)</a> </small>
   </div> 
 
- 
-  
-  
- <div *ngIf="ShowMe" class="container mt-5">
+<div *ngIf="ShowMe" class="container table-responsive">
 
-<table  class="table col-6 m-auto   ">
-<tr >
-  <th style="text-align: center; background-color: tomato;" >SEMESTER GRADE REPORT  </th>
-</tr>
-
-</table>
-<table class="table table-data col-6 m-auto ">
-  <tr >
-    <td > <strong>NAME OF STUDENT</strong> </td>
-      <td ><strong>ENROLL NO.</strong></td>
-      <td ><strong>SEMESTER</strong></td>
-      <td ><strong>DEGREE</strong></td>
-      <td ><strong>BRANCH</strong></td>
-    </tr>
+<table  class="table-data table col-sm-12 m-auto">
   <tbody>
-    <tr *ngFor = 'let us of findData'>
-      <td>{{us.name}}</td>
-      <td>{{us.enrollment}}</td>
-      <td>{{us.semester}}</td>
-      <td>B.TECH</td>
-      <td>{{us.branch}}</td>
-    </tr>
-  
-  </tbody>
+  <tr>
+    <td class="style6" colspan="1"  style="text-align: center;" ><strong> NAME OF STUDENT</strong> </td>
+    <td class="style6" colspan="1"  style="text-align: center;" ><strong>ENROLL NO.</strong></td>
+    <td class="style6" colspan="1"  style="text-align: center;" ><strong>SEMESTER</strong></td>
+    <td class="style6" colspan="1"  style="text-align: center;" ><strong>DEGREE</strong></td>
+    <td class="style6" colspan="1"  style="text-align: center;" ><strong>BRANCH</strong></td>
+  </tr>
+  <tr *ngFor = 'let us of findData'>
+    <td>{{us.name}}</td>
+    <td>{{us.enrollment}}</td>
+    <td>{{us.semester}}</td>
+    <td>B.TECH</td>
+    <td>{{us.branch}}</td>
+  </tr>
+</tbody>
+
 </table>
-<table class="table col-6 m-auto ">
+
+<table class="table-data table col-sm-12 m-auto">
   <tr>
     <td ><strong>COURSE CODE</strong> </td>
     <td > <strong>COURSE NAME</strong> </td>
     <td > <strong>GRADE</strong> </td>
     <td ><strong> COURSE CREDITS</strong></td>
   </tr>
-<tbody>
   <tr *ngFor = 'let us of findData'>
     <td>{{cc1}}</td>
     <td>{{us.cn1}}</td>
@@ -134,46 +125,36 @@
     <td>{{us.cn9}}</td>
     <td>{{mg9}} </td>
     <td>{{gd9}}</td>
- 
- 
- 
-  
-  
-</tbody>
 </table>
 
-<table  class="table-data table col-6 m-auto  " >
-  <tbody><tr>
-      <td  class="style6" colspan="3"  style="text-align: center;" >
-          <b><strong >CURRENT SEMESTER
-        PERFORMANCE</strong></b>
-      </td>
-      <td  colspan="3" >
-          <strong >CUMULATIVE PERFORMANCE</strong>
-      </td>
+<table class="table-data table col-sm-12 m-auto">
+  <tr>
+    <td class="style6" colspan="3"  style="text-align: center;" >
+        <b><strong >CURRENT SEMESTER PERFORMANCE</strong></b></td>
+      <td  colspan="3"><b><strong >CUMULATIVE PERFORMANCE</strong></b></td>
   </tr>
   <tr>
-      <td  class="style5">
+      <td class="style5">
           <strong>EARNED CREDITS</strong>
       </td>
-      <td  class="style3">
+      <td class="style3">
           <strong >EARNED GRADE POINTS</strong>
       </td>
-      <td width="14%">
+      <td width="style3">
           <strong >SGPA</strong>
       </td>
       <td class="style5">
           <strong >EARNED CREDITS</strong>
       </td>
-      <td  class="style3">
+      <td class="style3">
           <strong >EARNED GRADE POINTS</strong>
       </td>
-      <td  >
+      <td>
           <strong >CGPA</strong>
       </td>
   </tr>
   <tr>
-      <td  class="style5">
+      <td class="style5">
           <span id="lblearn">25</span>
       </td>
       <td class="style3">
@@ -192,11 +173,10 @@
           <span id="lblSgpa1"><strong>{{sgpa}}</strong></span>
       </td>
   </tr>
-</tbody>
 
 </table>
-<div class=" col-6 m-auto">
-<button class=" btn-primary btn-sm "  (click)="print()"> <small>PrintResult</small>  </button>
-</div>
-</div>
 
+<div class=" col-sm-12 m-auto ">
+<button class=" btn-primary btn-sm m-auto "  (click)="print()"> <small>PrintResult</small>  </button>
+</div>
+</div>
